@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 30px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#calendar-body{
+  width: 700px;
+  margin: 0 auto;
+
+  h1{
+    text-align: center;
+    margin: 0;
+  }
+
+  table{
+    border-collapse: collapse;
+
+    #calendar-day-name td{
+      height: 30px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    td{
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      box-sizing: border-box;
+      vertical-align: top;
+      border: 1px solid silver;
+
+      &.saturday{
+        color: blue;
+      }
+
+      &.sunday{
+        color: red;
+      }
+    }
+  }
+}
