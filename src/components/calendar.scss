@@ -1,0 +1,68 @@
+#calendar-body{
+    width: 700px;
+    margin: 0 auto;
+    
+    #calendar-header{
+      position: relative;
+      
+      h1{
+        text-align: center;
+        margin: 0;
+      }
+  
+      #calendar-before-month{
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -15px;
+        cursor: pointer;
+        user-select: none;
+      }
+  
+      #calendar-next-month{
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -15px;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+  
+    table{
+      border-collapse: collapse;
+  
+      #calendar-day-name td{
+        height: 30px;
+        vertical-align: middle;
+        text-align: center;
+      }
+  
+      td{
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        box-sizing: border-box;
+        vertical-align: top;
+        border: 1px solid silver;
+  
+        &.saturday{
+          color: blue;
+        }
+  
+        &.sunday{
+          color: red;
+        }
+
+        &.other-month{
+          color: #bbb;
+        }
+      }
+    }
+  }
