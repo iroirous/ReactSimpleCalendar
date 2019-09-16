@@ -4,7 +4,44 @@ import style from './calendar.scss';
 class Calendar extends React.Component{
   constructor(){
     super();
-    this.state = {calendar: this.getCalendar(2019, 7)};
+    this.state = {
+      calendar: this.getCalendar(2019, 7),
+      holidays: []
+    };
+    this.getHolidays();
+  }
+
+  getHolidays(){
+    // 祝日一覧を取得する
+    fetch('holidays.csv').then((response) => {
+      return response.text();
+    }).then((text) => {
+      let array = [];
+      text.split('\r\n').map((row) => {
+        array.push(row.split(','));
+      });
+      this.setState({holidays: array});
+    });
+  }
+
+  isHoliday(date){
+    let low = 0;
+    let high = this.state.holidays.length - 1;
+    let middle, cmpdate;
+
+    // 二部探索で祝日かどうか判定
+    while(low <= high){
+      middle = Math.floor((low + high) / 2);
+      cmpdate = new Date(this.state.holidays[middle][0]);
+      if(cmpdate.getTime() === date.getTime()){
+        return this.state.holidays[middle][1];
+      } else if(cmpdate.getTime() < date.getTime()){
+        low = middle + 1;
+      } else {
+        high = middle - 1;
+      }
+    }
+    return false;
   }
 
   showBeforeMonth(){
@@ -91,13 +128,21 @@ class Calendar extends React.Component{
                   if(date.getMonth() + 1 !== this.state.calendar.month){
                     return <td className="other-month" key={datekey}>{date.getDate()}</td>;
                   } else {
-                    switch(date.getDay()){
-                      case 0:
-                        return <td className="sunday" key={datekey}>{date.getDate()}</td>;
-                      case 6:
-                        return <td className="saturday" key={datekey}>{date.getDate()}</td>;
-                      default:
-                        return <td key={datekey}>{date.getDate()}</td>;
+                    const holiday = this.isHoliday(date);
+                    if(holiday){
+                      return <td className="sunday" key={datekey}>
+                        {date.getDate()}
+                        <span class="holiday-name">{holiday}</span>
+                      </td>;
+                    } else {
+                      switch(date.getDay()){
+                        case 0:
+                          return <td className="sunday" key={datekey}>{date.getDate()}</td>;
+                        case 6:
+                          return <td className="saturday" key={datekey}>{date.getDate()}</td>;
+                        default:
+                          return <td key={datekey}>{date.getDate()}</td>;
+                      }
                     }
                   }
                 } else {
