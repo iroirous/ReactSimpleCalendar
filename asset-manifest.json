@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReactSimpleCalendar/static/css/main.1e4c671d.chunk.css",
+    "main.js": "/ReactSimpleCalendar/static/js/main.853aae9b.chunk.js",
+    "main.js.map": "/ReactSimpleCalendar/static/js/main.853aae9b.chunk.js.map",
+    "runtime~main.js": "/ReactSimpleCalendar/static/js/runtime~main.1f102b17.js",
+    "runtime~main.js.map": "/ReactSimpleCalendar/static/js/runtime~main.1f102b17.js.map",
+    "static/js/2.7cb4c9ff.chunk.js": "/ReactSimpleCalendar/static/js/2.7cb4c9ff.chunk.js",
+    "static/js/2.7cb4c9ff.chunk.js.map": "/ReactSimpleCalendar/static/js/2.7cb4c9ff.chunk.js.map",
+    "index.html": "/ReactSimpleCalendar/index.html",
+    "precache-manifest.3ec43c22997f56c722a21f132070b102.js": "/ReactSimpleCalendar/precache-manifest.3ec43c22997f56c722a21f132070b102.js",
+    "service-worker.js": "/ReactSimpleCalendar/service-worker.js",
+    "static/css/main.1e4c671d.chunk.css.map": "/ReactSimpleCalendar/static/css/main.1e4c671d.chunk.css.map"
+  }
+}
