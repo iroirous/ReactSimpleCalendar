@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae1170bec3e77c5d76af6b4b798f341c",
+    "revision": "70fc4d40b5ef19a7892d3c93006aeba2",
     "url": "/ReactSimpleCalendar/index.html"
   },
   {
